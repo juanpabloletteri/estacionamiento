@@ -8,7 +8,20 @@ function ingresar()
 			boton: "ingresar",
 			patente: $("#patente").val(),
 		}});
-	f.done(function(r) {
-		$("#tabla").html("");});	
 }
 
+function login()
+{
+	$.ajax(
+		{
+			url: "nexo.php",
+			type: "post",
+			data:
+			{
+				boton: "login",
+				usuario: $("#usuario").val(),
+				pass: $("#pass").val()
+			}
+		}
+	);
+}

@@ -30,7 +30,7 @@ function login()
 			if (resultado=="ok")
 			{
 				alert("OK");
-				location.reload(true);
+				window.location.href = "estacionamiento.html";
 			}
 			else
 			{

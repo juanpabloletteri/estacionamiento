@@ -1,5 +1,7 @@
 <?php 
-require("clases/vehiculo.php");
+require_once("clases/vehiculo.php");
+require_once("clases/usuario.php");
+
 
 if (isset($_POST['boton']))
 {
@@ -13,7 +15,16 @@ if (isset($_POST['boton']))
 {
 	if ($_POST['boton']=="login")
 	{
-		usuario::login($_POST['usuario'], $_POST['pass']);
+		if (usuario::login($_POST['usuario'], $_POST['pass'])!=false)
+		{
+			
+			echo("ok");
+		}
+		else
+		{
+			echo("error");
+		}
+		
 	}
 }
 

@@ -8,7 +8,23 @@ function ingresar()
 			boton: "ingresar",
 			patente: $("#patente").val(),
 		}});
+	f.done (function()
+			{
+				var d=$.ajax({
+				url:"grilla.php",
+				type:"get",
+				data:{
+				}});
+				d.done(function(resultado)
+					{
+						$("#tabla").val(resultado);
+					}
+				);
+			}
+		);
+
 }
+
 
 function login()
 {
@@ -30,7 +46,7 @@ function login()
 			if (resultado=="ok")
 			{
 				alert("OK");
-				window.location.href = "estacionamiento.html";
+				window.location.href = "estacionamiento.php";
 			}
 			else
 			{

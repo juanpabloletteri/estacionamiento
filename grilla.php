@@ -10,7 +10,6 @@
 					<th>  Patente   </th>				
 					<th>  Ingreso     </th>
 					<th>  Egreso   </th>
-					<th>  Monto        </th>
 				</tr> 
 			</thead>";   	
 
@@ -21,7 +20,6 @@
 						<td>".$personaAux->patente."</td>
 						<td>".$personaAux->ingreso."</td>
 						<td>".$personaAux->egreso."</td>
-						<td>".$personaAux->acobrar."</td>
 						<td><button name='Borrar' onclick='Borrar(".$personaAux->id.")'>   <span class='glyphicon glyphicon-remove-circle'>&nbsp;</span>Borrar</button></td>
 						<td><button name='Modificar' onclick='Modificar(".$personaAux->id.")'><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
 					</tr>";

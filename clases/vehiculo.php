@@ -12,7 +12,9 @@ class vehiculo
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into 
 			autos (patente,ingreso)
-			values('$patente','$ingreso')");
+			values(:patente,:ingreso)");
+		$consulta->bindValue(':patente',$patente, PDO::PARAM_STR);
+		$consulta->bindValue(':ingreso',$ingreso, PDO::PARAM_STR);
 		$consulta->execute();
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	}

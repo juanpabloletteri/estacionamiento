@@ -8,6 +8,8 @@ function ingresar()
 			boton: "ingresar",
 			patente: $("#patente").val(),
 		}});
+	success: alert("AUTO INGRESADO");
+	//por si quiero imprimir la tabla grilla
 	f.done (function()
 			{
 				var d=$.ajax({
@@ -52,6 +54,30 @@ function login()
 			{
 				alert("Usuario o contraseña inexistentes");
 			}
+			
+		});
+}
+
+function salir()
+{
+	var f=$.ajax(
+		{
+			url: "nexo.php",
+			type: "post",
+			data:
+			{
+				boton: "salir"
+			}
+
+		}
+	);
+	f.done (function(salir)
+		{
+			if (salir=="salir")
+			{
+				window.location.href = "index.html";
+			}
+
 			
 		});
 }

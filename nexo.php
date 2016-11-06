@@ -1,8 +1,9 @@
 <?php 
+session_start();
+
+
 require_once("clases/vehiculo.php");
 require_once("clases/usuario.php");
-
-session_start();
 
 if (isset($_POST['boton']))
 {
@@ -21,7 +22,7 @@ if (isset($_POST['boton']))
 		if ($devolucion!=false)
 		{
 			$_SESSION['usuario']=$_POST['usuario'];
-			//$_SESSION['id']=$devolucion['id'];
+			//$_SESSION['id']=$devolucion[0]['id'];
 			echo("ok");
 		}
 		else
@@ -32,5 +33,14 @@ if (isset($_POST['boton']))
 	}
 }
 
+if (isset($_POST['boton']))
+{
+	if ($_POST['boton']=="salir")
+	{
+		session_unset();
+		session_destroy();
+		echo "salir";
+	}
+}
 
 ?>

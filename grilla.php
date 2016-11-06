@@ -1,6 +1,13 @@
 <?php
 	require_once('clases/vehiculo.php');
 
+	session_start();
+	if (!isset($_SESSION['usuario']))
+	{
+	  header("Location: index.html");
+	  exit;
+	}
+
 	$ArrayDePersonas = vehiculo::TraerTodosLosVehiculos();
 
 	echo "<table class='table table-hover table-responsive'>

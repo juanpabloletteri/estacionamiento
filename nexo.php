@@ -11,11 +11,8 @@ if (isset($_POST['boton']))
 	{
 		vehiculo::ingresar($_POST['patente']);
 	}
-}
 
-if (isset($_POST['boton']))
-{
-	if ($_POST['boton']=="login")
+	else if ($_POST['boton']=="login")
 	{
 		$devolucion=usuario::login($_POST['usuario'], $_POST['pass']);
 
@@ -31,11 +28,8 @@ if (isset($_POST['boton']))
 		}
 		
 	}
-}
 
-if (isset($_POST['boton']))
-{
-	if ($_POST['boton']=="salir")
+	else if ($_POST['boton']=="salir")
 	{
 		session_unset();
 		session_destroy();

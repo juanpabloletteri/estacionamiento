@@ -47,7 +47,6 @@ function login()
 		{
 			if (resultado=="ok")
 			{
-				alert("OK");
 				window.location.href = "estacionamiento.php";
 			}
 			else

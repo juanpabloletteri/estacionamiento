@@ -40,8 +40,9 @@ if (isset($_POST['boton']))
 
 		if ($devolucion!=false)
 		{
-			$_SESSION['usuario']=$_POST['usuario'];
-			//$_SESSION['id']=$devolucion[0]['id'];
+			$_SESSION['usuario']=$devolucion[0]['usuario'];
+			$_SESSION['admin']=$devolucion[0]['admin'];			
+			//var_dump($_SESSION);
 			echo("ok");
 		}
 		else

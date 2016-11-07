@@ -1,9 +1,9 @@
 <?php 
 session_start();
 
-
 require_once("clases/vehiculo.php");
 require_once("clases/usuario.php");
+require_once("clases/historial.php");
 
 if (isset($_POST['boton']))
 {
@@ -50,6 +50,11 @@ if (isset($_POST['boton']))
 			echo("error");
 		}
 		
+	}
+
+	elseif ($_POST['boton']=="tabla") 
+	{
+		echo(historial::ConstruirTabla()) ;
 	}
 
 	else if ($_POST['boton']=="salir")

@@ -94,3 +94,25 @@ function salir()
 			
 		});
 }
+
+function tabla()
+{
+	var f=$.ajax
+	(
+		{
+			url:"nexo.php",
+			type:"post",
+			data:
+			{
+				boton:"tabla"
+			}
+		}
+	);
+	f.done
+	(
+		function(algo) 
+		{
+			$("#tabla").html(algo);
+		}
+	);	
+}

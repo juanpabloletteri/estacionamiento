@@ -8,7 +8,7 @@ function ingresar()
 			boton: "ingresar",
 			patente: $("#patente").val(),
 		}});
-	success: alert("AUTO INGRESADO");
+	success: alert("GESTIONANDO AUTO");
 	//por si quiero imprimir la tabla grilla
 	f.done (function()
 			{

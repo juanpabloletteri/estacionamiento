@@ -9,7 +9,13 @@ class usuario
 	public static function login($usuario, $pass)
 	{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("select * from login where usuario = :usuario and pass = :pass" );
+			$consulta =$objetoAccesoDato->RetornarConsulta("
+				select * 
+				from login 
+				where usuario = :usuario 
+				and 
+				pass = :pass" 
+				);
 			$consulta->bindValue(':usuario',$usuario, PDO::PARAM_STR);
 			$consulta->bindValue(':pass',$pass, PDO::PARAM_STR);
 			$consulta->execute();

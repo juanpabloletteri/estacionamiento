@@ -9,7 +9,24 @@ if (isset($_POST['boton']))
 {
 	if ($_POST['boton']=="ingresar")
 	{
-		vehiculo::ingresar($_POST['patente']);
+		$auto=vehiculo::TraerUnVehiculo($_POST['patente']);
+
+		if ($auto->id==NULL)
+		{
+			echo ("INGRESAR");
+			vehiculo::ingresar($_POST['patente']);
+		}
+		else
+		{
+			echo("COBRAR");
+			$horas=(strtotime('now') - strtotime($auto->ingreso))/60/60 ;
+			var_dump($horas);
+		}
+
+		//var_dump(vehiculo::TraerUnVehiculo($_POST['patente']));	
+
+		//vehiculo::BuscarUnVehiculo($_POST['patente']);
+		;
 	}
 
 	else if ($_POST['boton']=="login")

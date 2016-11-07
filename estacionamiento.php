@@ -44,6 +44,7 @@ if (!isset($_SESSION['usuario']))
         <p><input type="text" name="patente" id="patente" placeholder="Ingrese Patente"></p>
         <br>
         <button type="button" class="round medium blue button" onclick="ingresar()">Gestionar</button>
+        <button type="button" class="round medium blue button" onclick="estacionados()">Estacionados</button>
         <?php
           if ($_SESSION['admin']==1)
           {

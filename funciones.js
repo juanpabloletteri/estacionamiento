@@ -15,10 +15,12 @@ function ingresar()
 			if (resultado=="ingresar")
 			{
 				alert("Auto Ingresado Exitosamente");
+				estacionados();
 			}
 			else
 			{
 				alert("A facturar: $" + resultado);
+				estacionados();
 			}
 			
 		});
@@ -105,6 +107,28 @@ function tabla()
 			data:
 			{
 				boton:"tabla"
+			}
+		}
+	);
+	f.done
+	(
+		function(algo) 
+		{
+			$("#tabla").html(algo);
+		}
+	);	
+}
+
+function estacionados()
+{
+	var f=$.ajax
+	(
+		{
+			url:"nexo.php",
+			type:"post",
+			data:
+			{
+				boton:"estacionados"
 			}
 		}
 	);

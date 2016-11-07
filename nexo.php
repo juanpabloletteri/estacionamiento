@@ -22,6 +22,7 @@ if (isset($_POST['boton']))
 			$horas=(strtotime('now') - strtotime($auto->ingreso))/60/60 ;
 			//var_dump($horas);ç
 			$monto=CalcularMonto($horas);
+			vehiculo::registrar($_POST['patente'],$horas,$monto);
 			//var_dump($monto);
 			echo($monto);
 		}

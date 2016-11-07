@@ -30,6 +30,24 @@ class vehiculo
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	}
 
+	public static function registrar($patente, $tiempo, $monto)
+	{
+		$dia=date("Y-m-d H:i:s");
+
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("
+			INSERT into 
+			historial (patente,tiempo,monto,dia)
+			values(:patente, :tiempo, :monto, :dia)"
+			);
+		$consulta->bindValue(':patente',$patente, PDO::PARAM_STR);
+		$consulta->bindValue(':tiempo',$tiempo, PDO::PARAM_INT);
+		$consulta->bindValue(':monto',$monto, PDO::PARAM_INT);
+		$consulta->bindValue(':dia',$dia, PDO::PARAM_STR);		
+		$consulta->execute();
+		return $objetoAccesoDato->RetornarUltimoIdInsertado();
+	}
+
 	public static function TraerUnVehiculo($patente)
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 

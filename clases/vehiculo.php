@@ -48,6 +48,21 @@ class vehiculo
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	}
 
+	public static function retirar($patente)
+	{
+		$dia=date("Y-m-d H:i:s");
+
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("
+			DELETE
+			from autos
+			where patente = :patente"
+			);
+		$consulta->bindValue(':patente',$patente, PDO::PARAM_STR);	
+		$consulta->execute();
+		return $objetoAccesoDato->RetornarUltimoIdInsertado();
+	}
+
 	public static function TraerUnVehiculo($patente)
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 

@@ -23,6 +23,7 @@ if (isset($_POST['boton']))
 			//var_dump($horas);ç
 			$monto=CalcularMonto($horas);
 			vehiculo::registrar($_POST['patente'],$horas,$monto);
+			vehiculo::retirar($_POST['patente']);
 			//var_dump($monto);
 			echo($monto);
 		}

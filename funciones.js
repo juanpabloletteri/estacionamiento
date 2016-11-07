@@ -9,8 +9,22 @@ function ingresar()
 			patente: $("#patente").val(),
 		}});
 	success: alert("GESTIONANDO AUTO");
+
+	f.done (function(resultado)
+		{
+			if (resultado=="ingresar")
+			{
+				alert("Auto Ingresado Exitosamente");
+			}
+			else
+			{
+				alert("A facturar: $" + resultado);
+			}
+			
+		});
+
 	//por si quiero imprimir la tabla grilla
-	f.done (function()
+	/*f.done (function()
 			{
 				var d=$.ajax({
 				url:"grilla.php",
@@ -23,7 +37,7 @@ function ingresar()
 					}
 				);
 			}
-		);
+		);*/
 
 }
 

@@ -140,3 +140,33 @@ function estacionados()
 		}
 	);	
 }
+
+function testAdministrador()
+{
+	var f=$.ajax
+	({}	);
+
+	f.done
+	(
+		function() 
+		{
+			$("#usuario").val("admin");
+			$("#pass").val("admin");
+		}
+	);	
+}
+
+function testUsuario()
+{
+	var f=$.ajax
+	({}	);
+
+	f.done
+	(
+		function() 
+		{
+			$("#usuario").val("usuario");
+			$("#pass").val("usuario");
+		}
+	);	
+}

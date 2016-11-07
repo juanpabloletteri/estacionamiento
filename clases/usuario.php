@@ -48,10 +48,18 @@ class usuario
 
 			foreach ($ArrayDePersonas as $personaAux)
 			{
+				if ($personaAux->admin==1)
+				{
+					$tipo="administrador";
+				}
+				else
+				{
+					$tipo="usuario";
+				}
 				$tabla.= " 	<tr>
 							<td>".$personaAux->usuario."</td>
 							<td>".$personaAux->pass."</td>
-							<td>".$personaAux->admin."</td>
+							<td>".$tipo."</td>
 						</tr>";
 			}	
 		$tabla.= "</table>";

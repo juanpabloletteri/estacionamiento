@@ -119,6 +119,28 @@ function tabla()
 	);	
 }
 
+function tablaUsuarios()
+{
+	var f=$.ajax
+	(
+		{
+			url:"nexo.php",
+			type:"post",
+			data:
+			{
+				boton:"tablaUsuarios"
+			}
+		}
+	);
+	f.done
+	(
+		function(algo) 
+		{
+			$("#tabla").html(algo);
+		}
+	);	
+}
+
 function estacionados()
 {
 	var f=$.ajax

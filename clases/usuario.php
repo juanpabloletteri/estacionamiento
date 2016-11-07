@@ -5,6 +5,7 @@ class usuario
 {
 	public $usuario;
 	public $pass;
+	public $administrador;
 
 	public static function login($usuario, $pass)
 	{
@@ -21,6 +22,41 @@ class usuario
 			$consulta->execute();
 			$resultado = $consulta->fetchAll();
 			return $resultado;
+	}
+
+	public static function TraerTodosLosUsuarios()
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("select * from login");
+		$consulta->execute();			
+		$arrHistorial= $consulta->fetchAll(PDO::FETCH_CLASS, "usuario");	
+		return $arrHistorial;
+	}
+
+	public static function ConstruirTabla()
+	{
+		$ArrayDePersonas = usuario::TraerTodosLosUsuarios();
+
+		$tabla= "<table class='table table-hover table-responsive'>
+				<thead>
+					<tr>
+						<th>  Usuario   </th>
+						<th>  Password   </th>				
+						<th>  Admin     </th>
+					</tr> 
+				</thead>";   	
+
+			foreach ($ArrayDePersonas as $personaAux)
+			{
+				$tabla.= " 	<tr>
+							<td>".$personaAux->usuario."</td>
+							<td>".$personaAux->pass."</td>
+							<td>".$personaAux->admin."</td>
+						</tr>";
+			}	
+		$tabla.= "</table>";
+
+		return $tabla;
 	}
 }
 

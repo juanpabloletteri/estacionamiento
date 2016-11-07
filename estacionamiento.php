@@ -49,6 +49,7 @@ if (!isset($_SESSION['usuario']))
           if ($_SESSION['admin']==1)
           {
             echo('<button type="button" class="round medium purple button" onclick="tabla()">Recaudacion</button>');
+            echo('<button type="button" class="round medium purple button" onclick="tablaUsuarios()">Usuarios</button>');
           }
         ?>
       </form>

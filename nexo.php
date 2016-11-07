@@ -85,6 +85,11 @@ if (isset($_POST['boton']))
 		echo(estacionados::ConstruirTabla()) ;
 	}
 
+	elseif ($_POST['boton']=="tablaUsuarios") 
+	{
+		echo(usuario::ConstruirTabla()) ;
+	}
+
 	else if ($_POST['boton']=="salir")
 	{
 		session_unset();

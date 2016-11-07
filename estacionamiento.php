@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuario']))
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Base de datos</title>
+  <title>GESTION ESTACIONAMIENTO</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/buttons.css">
 
@@ -39,15 +39,15 @@ if (!isset($_SESSION['usuario']))
 <body>
   <section class="container">
     <div class="login" >
-      <h1>Ingreso</h1>
+      <h1>ESTACIONAMIENTO</h1>
       <form onsubmit="return false">
         <p><input type="text" name="patente" id="patente" placeholder="Ingrese Patente"></p>
         <br>
-        <button type="button" class="round medium blue button" onclick="ingresar()">Ingresar</button>
+        <button type="button" class="round medium blue button" onclick="ingresar()">Gestionar</button>
         <?php
           if ($_SESSION['admin']==1)
           {
-            echo('<button type="button" class="round medium purple button" onclick="tabla()">Ver Grilla</button>');
+            echo('<button type="button" class="round medium purple button" onclick="tabla()">Recaudacion</button>');
           }
         ?>
       </form>

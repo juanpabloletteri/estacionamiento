@@ -8,22 +8,27 @@ function ingresar()
 			boton: "ingresar",
 			patente: $("#patente").val(),
 		}});
-	success: alert("GESTIONANDO AUTO");
+	//success: alert("GESTIONANDO AUTO");
+	//success: swal("Gestionando auto");
 
 	f.done (function(resultado)
 		{
 			if (resultado=="ingresar")
 			{
-				alert("Auto Ingresado Exitosamente");
+				swal("Auto ingresado exitosamente", "", "success");
+				//alert("Auto Ingresado Exitosamente");
 				estacionados();
 			}
 			else if (resultado=="vacio")
 			{
-				alert("Ingrese una patente");
+				
+				swal("Ingrese una patente");
+				//alert("Ingrese una patente");
 			}
 			else
 			{
-				alert("A facturar: $" + resultado);
+				swal("A facturar: $" + resultado, "" ,"success");
+				//alert("A facturar: $" + resultado);
 				estacionados();
 			}
 			
@@ -71,7 +76,8 @@ function login()
 			}
 			else
 			{
-				alert("Usuario o contraseña inexistentes");
+				swal("Usuario o contraseña inexistentes");
+				//alert("Usuario o contraseña inexistentes");
 			}
 			
 		});

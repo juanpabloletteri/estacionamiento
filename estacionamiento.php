@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario']))
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>GESTION ESTACIONAMIENTO</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style2.css">
   <link rel="stylesheet" href="css/buttons.css">
 
   <script src="funciones.js"></script>
@@ -38,9 +38,13 @@ if (!isset($_SESSION['usuario']))
 </head>
 <body>
   <section class="container">
-    <div class="login" >
-      <h1>ESTACIONAMIENTO</h1>
-      <form onsubmit="return false">
+ <div class="shadow-forms">
+  <div class="message warning">
+  <div class="login-head">
+       
+    <button type="button" class="round medium green button" onclick="salir()">Logout</button>
+
+      <form onsubmit="return false" >
         <p><input type="text" name="patente" id="patente" placeholder="Ingrese Patente"></p>
         <br>
         <button type="button" class="round medium blue button" onclick="ingresar()">Gestionar</button>
@@ -59,7 +63,7 @@ if (!isset($_SESSION['usuario']))
             ?>
           </div>
     </div>
-    <button type="button" class="round medium green button" onclick="salir()">Logout</button>
+
   </section>
 
 

@@ -10,6 +10,13 @@ if (isset($_POST['boton']))
 {
 	if ($_POST['boton']=="ingresar")
 	{
+		
+		if ($_POST['patente']=="")
+		{
+			echo("vacio");
+			return true;
+		}
+
 		$auto=vehiculo::TraerUnVehiculo($_POST['patente']);
 
 		if ($auto->id==NULL)

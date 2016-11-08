@@ -17,6 +17,10 @@ function ingresar()
 				alert("Auto Ingresado Exitosamente");
 				estacionados();
 			}
+			else if (resultado=="vacio")
+			{
+				alert("Ingrese una patente");
+			}
 			else
 			{
 				alert("A facturar: $" + resultado);
